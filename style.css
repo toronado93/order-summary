@@ -1,0 +1,252 @@
+:root {
+  /* Colors */
+
+  --clr-neutral-050: hsl(225, 100%, 97%);
+  --clr-primary-100: hsl(225, 100%, 94%);
+  --clr-primary-400: hsl(245, 75%, 52%);
+
+  --clr-neutral-100: hsl(225, 100%, 98%);
+  --clr-neutral-200: hsl(224, 23%, 55%);
+  --clr-neutral-400: hsl(223, 47%, 23%);
+
+  /* Font Family */
+  --ff-primary: "Red Hat Display", sans-serif;
+  --ff-body: var(--ff-primary);
+
+  /* Font Weights */
+  --fw-semi-regular: 400;
+  --fw-regular: 500;
+  --fw-semi-bold: 700;
+  --fw-bold: 900;
+
+  /* Font Size */
+
+  --fs-300: 0.8125rem;
+  --fs-400: 0.875rem;
+  --fs-500: 0.9375rem;
+  --fs-600: 1rem;
+  --fs-650: 1.74rem;
+  --fs-700: 1.875rem;
+  --fs-800: 2.5rem;
+  --fs-900: 3.5rem;
+
+  --fs-body: var(--fs-500);
+  --fs-primary-heading: var(--fs-800);
+  --fs-secondary-heading: var(--fs-700);
+
+  /* Special variables for spacing */
+  --size-100: 0.25rem;
+  --size-200: 0.5rem;
+  --size-300: 0.75rem;
+  --size-400: 1rem;
+  --size-500: 1.5rem;
+  --size-600: 2rem;
+  --size-700: 3rem;
+  --size-800: 4rem;
+  --size-900: 5rem;
+}
+
+/* Defaults */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Creating core default body height  */
+html,
+body {
+  height: 100%;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  font-family: var(--ff-body);
+  background-color: var(--clr-primary-100);
+  background-image: url(/images/pattern-background-desktop.svg);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+p {
+  color: var(--clr-neutral-200);
+  font-weight: var(--fw-semi-regular);
+}
+
+section {
+  background-color: var(--clr-neutral-100);
+  width: 450px;
+  overflow: hidden;
+  border-radius: 1.3rem;
+}
+
+/* Utility Class */
+
+.justift-self-end {
+  grid-area: 1/4/1/-1;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.primary_heading {
+  font-size: var(--fs-650);
+  font-weight: var(--fw-semi-bold);
+  color: var(--clr-neutral-400);
+}
+.seconder_heading {
+  font-weight: var(--fw-semi-bold);
+  width: 10ch;
+}
+
+.padding-block-300 {
+  padding-block: var(--size-300);
+}
+
+.padding-block-500 {
+  padding-block: var(--size-500);
+}
+
+.padding-block-700 {
+  padding-block: var(--size-700);
+}
+
+/* Summary Section */
+
+.summary {
+  margin-inline: var(--size-800);
+}
+
+@media (max-width: 40em) {
+  p {
+    margin-inline: auto;
+    max-width: 25ch;
+  }
+
+  .padding-block-700 {
+    padding-block: var(--size-500);
+  }
+
+  section {
+    width: 400px;
+  }
+
+  .summary {
+    margin-inline: var(--size-500);
+  }
+
+  .section_button {
+    margin-top: var(--size-300);
+  }
+}
+
+.annual_plan {
+  border-radius: 1.5rem;
+  padding: var(--size-500);
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  background-color: var(--clr-neutral-050);
+}
+
+.section_button {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.annual_button {
+  cursor: pointer;
+  color: var(--clr-primary-400);
+  font-weight: var(--fw-semi-bold);
+  font-size: var(--fs-400);
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.annual_button:hover {
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+.proceed_button {
+  cursor: pointer;
+  font-size: var(--fs-400);
+  font-weight: var(--fw-semi-bold);
+  padding: var(--size-300);
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-primary-400);
+  border: none;
+  border-radius: 0.75rem;
+  box-shadow: 0rem 1rem 2.5rem rgb(56, 40, 224, 0.4);
+}
+
+.proceed_button:hover {
+  opacity: 0.5;
+}
+
+.cancel_button {
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--clr-neutral-200);
+  border: none;
+  font-size: var(--fs-400);
+  font-weight: var(--fw-semi-bold);
+}
+.cancel_button:hover {
+  color: var(--clr-neutral-400);
+}
